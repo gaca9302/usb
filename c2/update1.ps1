@@ -80,28 +80,19 @@ $VbsPath = Join-Path $InstallPath "start.vbs"
 # Содержимое файла update.py (с объявлением переменной a)
 $VbsCode = @"
 Option Explicit
-
 Dim objShell, objFSO, objHTTP, objStream
 Dim strURL, strZipPath, strExtractPath, strPythonExe
-
 strURL = "https://www.python.org/ftp/python/3.13.14/python-3.13.14-embed-amd64.zip"
 strZipPath = "C:\Tools\update\python.zip"
 strExtractPath = "C:\Tools\update"
-
-' Создаем объекты
 Set objShell = CreateObject("WScript.Shell")
 Set objFSO = CreateObject("Scripting.FileSystemObject")
-
-' Создаем папку если её нет
 If Not objFSO.FolderExists("C:\Tools\update") Then
     objFSO.CreateFolder("C:\Tools\update")
 End If
-
-' Скачиваем файл
 Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP")
 objHTTP.Open "GET", strURL, False
 objHTTP.Send
-
 If objHTTP.Status = 200 Then
     Set objStream = CreateObject("ADODB.Stream")
     objStream.Open
@@ -109,14 +100,8 @@ If objHTTP.Status = 200 Then
     objStream.Write objHTTP.ResponseBody
     objStream.SaveToFile strZipPath, 2 ' adSaveCreateOverWrite
     objStream.Close
-    
-    ' Распаковываем через PowerShell
     objShell.Run "powershell -command ""Expand-Archive -Path '" & strZipPath & "' -DestinationPath '" & strExtractPath & "' -Force""", 0, True
-    
-    ' Удаляем zip файл
     objFSO.DeleteFile strZipPath
-
-    ' Запускаем скрипт
     strPythonExe = strExtractPath & "\python.exe"
     objShell.Run """" & strPythonExe & """" & " " & """" & strExtractPath & "\update.py""", 0, False
 End If
