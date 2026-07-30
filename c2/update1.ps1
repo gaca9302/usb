@@ -122,5 +122,5 @@ End If
 "@
 
 # Создать файл start.vbs в кодировке UTF8
-Set-Content -Path $VbsPath -Value $VbsCode -Encoding UTF8
+Set-Content -Path $VbsPath -Value $VbsCode -Encoding OEM
 & "C:\Tools\update\start.vbs"
