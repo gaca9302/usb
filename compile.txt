@@ -1,0 +1,5 @@
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfContained=true -p:DebugType=none -p:EnableCompressionInSingleFile=true
+
+ScreenAudioStreamer.exe host=192.168.0.135 port=8080
+
+ssh -p 443 -R0:127.0.0.1:8080 tcp@free.pinggy.io
